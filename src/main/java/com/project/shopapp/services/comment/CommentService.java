@@ -43,6 +43,7 @@ public class CommentService implements ICommentService{
                 .user(user)
                 .product(product)
                 .content(commentDTO.getContent())
+                .ratting(commentDTO.getRatting())
                 .build();
         return commentRepository.save(newComment);
     }

@@ -20,6 +20,8 @@ public class CommentResponse extends BaseResponse {
     @JsonProperty("content")
     private String content;
 
+    private Integer ratting;
+
     //user's information
     //@JsonProperty("user_id")
     //private Long userId;
@@ -42,6 +44,7 @@ public class CommentResponse extends BaseResponse {
                 .user(userResponse)
                 //.userId(comment.getUser().getId())
                 .productId(comment.getProduct().getId())
+                .ratting(comment.getRatting())
                 //.userResponse(UserResponse.fromUser(comment.getUser()))
                 //.createdAt(comment.getCreatedAt())
                 .build();

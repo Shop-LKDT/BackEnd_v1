@@ -19,4 +19,6 @@ public class CommentDTO {
 
     @JsonProperty("content")
     private String content;
+
+    private Integer ratting;
 }
