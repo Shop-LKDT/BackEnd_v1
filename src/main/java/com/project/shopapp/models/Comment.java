@@ -28,4 +28,6 @@ public class Comment extends BaseEntity {
     private User user;
 
     private String content;
+
+    private Integer ratting;
 }

@@ -104,13 +104,14 @@ public class CommentController {
                             HttpStatus.UNAUTHORIZED,
                             null));
         }
-        if(loginUser.getId() != commentDTO.getUserId()) {
-            return ResponseEntity.badRequest().body(
-                    new ResponseObject(
-                            "You cannot comment as another user",
-                            HttpStatus.BAD_REQUEST,
-                            null));
-        }
+//        if(loginUser.getId() != commentDTO.getUserId()) {
+//            return ResponseEntity.badRequest().body(
+//                    new ResponseObject(
+//                            "You cannot comment as another user",
+//                            HttpStatus.BAD_REQUEST,
+//                            null));
+//        }
+        commentDTO.setUserId(loginUser.getId());
         commentService.insertComment(commentDTO);
         return ResponseEntity.ok(
                 ResponseObject.builder()
