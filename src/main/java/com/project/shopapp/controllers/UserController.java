@@ -303,8 +303,8 @@ public class UserController {
         // Ví dụ đơn giản:
         return userAgent.toLowerCase().contains("mobile");
     }
-    @PostMapping("/details")
-    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
+    @GetMapping("/details")
+//    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
     public ResponseEntity<ResponseObject> getUserDetails(
             @RequestHeader("Authorization") String authorizationHeader
     ) throws Exception {
