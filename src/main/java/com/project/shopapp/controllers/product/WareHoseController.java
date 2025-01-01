@@ -22,8 +22,10 @@ import java.util.List;
 public class WareHoseController {
     private final WareHouseService warehouseService;
     @GetMapping
-    public ResponseEntity<ResponseObject> getAllWarehouseProducts() {
-        List<WareHouse> wareHouses = warehouseService.getAllWarehouses();
+    public ResponseEntity<ResponseObject> getAllWarehouseProducts(
+            @RequestParam (required = false) String city
+    ) {
+        List<WareHouse> wareHouses = warehouseService.getAllWarehouses(city);
         return ResponseEntity.ok().body(ResponseObject.builder()
                 .message("Get wareHouses successfully")
                 .status(HttpStatus.OK)

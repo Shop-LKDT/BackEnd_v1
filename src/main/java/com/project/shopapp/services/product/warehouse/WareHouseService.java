@@ -16,10 +16,12 @@ public class WareHouseService implements IWareHouseService {
     private final WarehouseRepository warehouseRepository;
 
     @Override
-    public List<WareHouse> getAllWarehouses() {
-        return warehouseRepository.findAll();
+    public List<WareHouse> getAllWarehouses(String city) {
+        if (city == null || city ==""){
+            return warehouseRepository.findAll();
+        }
+        else return warehouseRepository.findByLocation(city);
     }
-
     @Override
     public WareHouse getWarehouseById(Long id) {
         Optional<WareHouse> warehouse = warehouseRepository.findById(id);

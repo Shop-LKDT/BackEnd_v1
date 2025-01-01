@@ -6,7 +6,7 @@ import com.project.shopapp.models.product.WareHouse;
 import java.util.List;
 
 public interface IWareHouseService {
-    List<WareHouse> getAllWarehouses();
+    List<WareHouse> getAllWarehouses(String city);
 
     WareHouse getWarehouseById(Long id);
 

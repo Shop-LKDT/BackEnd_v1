@@ -4,5 +4,8 @@ package com.project.shopapp.repositories.product;
 import com.project.shopapp.models.product.WareHouse;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 public interface WarehouseRepository extends JpaRepository<WareHouse, Long> {
+    List<WareHouse> findByLocation(String city);
 }

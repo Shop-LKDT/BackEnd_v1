@@ -26,5 +26,14 @@ public class WareHouse extends BaseEntity {
     @Column(name = "location")
     private String location;
 
+    @Column(name = "address")
+    private String address;
+
+    @Column(name = "latitude")
+    private Double latitude;
+
+    @Column(name = "longitude")
+    private Double longitude;
+
 
 }
